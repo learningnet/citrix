@@ -211,6 +211,45 @@ class GoToWebinar extends ServiceAbstract implements CitrixApiAware
     return $this;
   }
   
+	  
+  /**
+   * Register a Co-Orgainzer
+   *
+   * @param int $webinarKey
+   * @param array $organizerData - external: true, organizerKey: 'string', givenName: 'string', email: 'string' (required)
+   * @return \Citrix\Entity\Consumer
+   */
+  public function addCoorganizer($webinarKey, $organizerData){
+
+    $url = 'https://api.citrixonline.com/G2W/rest/organizers/' . $this->getClient()->getOrganizerKey() . '/webinars/' . $webinarKey . '/coorganizers';
+    $this->setHttpMethod('POST')
+        ->setUrl($url)
+        ->setParams($organizerData)
+        ->sendRequest($this->getClient()->getAccessToken())
+        ->processResponse(true);
+
+    return $this->getResponse();
+  }
+  
+  /**
+   * Register a Panelist
+   *
+   * @param int $webinarKey
+   * @param array $panelistData - external: true, organizerKey: 'string', givenName: 'string', email: 'string' (required)
+   * @return \Citrix\Entity\Consumer
+   */
+  public function addPanelist($webinarKey, $panelistData){
+
+    $url = 'https://api.citrixonline.com/G2W/rest/organizers/' . $this->getClient()->getOrganizerKey() . '/webinars/' . $webinarKey . '/panelists';
+    $this->setHttpMethod('POST')
+        ->setUrl($url)
+        ->setParams($panelistData)
+        ->sendRequest($this->getClient()->getAccessToken())
+        ->processResponse(true);
+
+    return $this->getResponse();
+  }
+	
   /**
    *
    * @return the $client
