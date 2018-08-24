@@ -125,7 +125,7 @@ class GoToWebinar extends ServiceAbstract implements CitrixApiAware
    */
   public function updateWebinar($webinarKey, $params)
   {
-      $url = 'https://api.citrixonline.com/G2W/rest/organizers/' . $this->getClient()->getOrganizerKey() . '/webinars/' . $webinarKey;
+      $url = 'https://api.getgo.com/G2W/rest/organizers/' . $this->getClient()->getOrganizerKey() . '/webinars/' . $webinarKey;
       $this->setHttpMethod('PUT')
           ->setUrl($url)
           ->setParams($params)
@@ -206,7 +206,7 @@ class GoToWebinar extends ServiceAbstract implements CitrixApiAware
    */
   public function getAttendee($webinarKey, $sessionKey, $attendeeKey)
   {
-      $url = 'https://api.citrixonline.com/G2W/rest/organizers/' . $this->getClient()->getOrganizerKey() . '/webinars/' . $webinarKey . '/sessions/' . $sessionKey . '/attendees/' . $attendeeKey;
+      $url = 'https://api.getgo.com/G2W/rest/organizers/' . $this->getClient()->getOrganizerKey() . '/webinars/' . $webinarKey . '/sessions/' . $sessionKey . '/attendees/' . $attendeeKey;
       $this->setHttpMethod('GET')
         ->setUrl($url)
         ->sendRequest($this->getClient()->getAccessToken())
@@ -224,7 +224,7 @@ class GoToWebinar extends ServiceAbstract implements CitrixApiAware
    */
   public function getAttendeePolls($webinarKey, $sessionKey, $attendeeKey)
   {
-      $url = 'https://api.citrixonline.com/G2W/rest/organizers/' . $this->getClient()->getOrganizerKey() . '/webinars/' . $webinarKey . '/sessions/' . $sessionKey . '/attendees/' . $attendeeKey . '/polls';
+      $url = 'https://api.getgo.com/G2W/rest/organizers/' . $this->getClient()->getOrganizerKey() . '/webinars/' . $webinarKey . '/sessions/' . $sessionKey . '/attendees/' . $attendeeKey . '/polls';
       $this->setHttpMethod('GET')
         ->setUrl($url)
         ->sendRequest($this->getClient()->getAccessToken())
@@ -242,7 +242,7 @@ class GoToWebinar extends ServiceAbstract implements CitrixApiAware
    */
   public function getAttendeeSurveys($webinarKey, $sessionKey, $attendeeKey)
   {
-      $url = 'https://api.citrixonline.com/G2W/rest/organizers/' . $this->getClient()->getOrganizerKey() . '/webinars/' . $webinarKey . '/sessions/' . $sessionKey . '/attendees/' . $attendeeKey . '/surveys';
+      $url = 'https://api.getgo.com/G2W/rest/organizers/' . $this->getClient()->getOrganizerKey() . '/webinars/' . $webinarKey . '/sessions/' . $sessionKey . '/attendees/' . $attendeeKey . '/surveys';
       $this->setHttpMethod('GET')
         ->setUrl($url)
         ->sendRequest($this->getClient()->getAccessToken())
@@ -260,7 +260,7 @@ class GoToWebinar extends ServiceAbstract implements CitrixApiAware
    */
   public function getAttendeeQuestions($webinarKey, $sessionKey, $attendeeKey)
   {
-      $url = 'https://api.citrixonline.com/G2W/rest/organizers/' . $this->getClient()->getOrganizerKey() . '/webinars/' . $webinarKey . '/sessions/' . $sessionKey . '/attendees/' . $attendeeKey . '/questions';
+      $url = 'https://api.getgo.com/G2W/rest/organizers/' . $this->getClient()->getOrganizerKey() . '/webinars/' . $webinarKey . '/sessions/' . $sessionKey . '/attendees/' . $attendeeKey . '/questions';
       $this->setHttpMethod('GET')
         ->setUrl($url)
         ->sendRequest($this->getClient()->getAccessToken())
@@ -277,7 +277,7 @@ class GoToWebinar extends ServiceAbstract implements CitrixApiAware
    */
   public function getPanelists($webinarKey)
   {
-      $url = 'https://api.citrixonline.com/G2W/rest/organizers/' . $this->getClient()->getOrganizerKey() . '/webinars/' . $webinarKey . '/panelists';
+      $url = 'https://api.getgo.com/G2W/rest/organizers/' . $this->getClient()->getOrganizerKey() . '/webinars/' . $webinarKey . '/panelists';
       $this->setHttpMethod('GET')
         ->setUrl($url)
         ->sendRequest($this->getClient()->getAccessToken())
@@ -291,7 +291,7 @@ class GoToWebinar extends ServiceAbstract implements CitrixApiAware
    */
   public function createPanelist($webinarKey, $params)
   {
-      $url = 'https://api.citrixonline.com/G2W/rest/organizers/' . $this->getClient()->getOrganizerKey() . '/webinars/' . $webinarKey . '/panelists';
+      $url = 'https://api.getgo.com/G2W/rest/organizers/' . $this->getClient()->getOrganizerKey() . '/webinars/' . $webinarKey . '/panelists';
       // print_r($params);
       $this->setHttpMethod('POST')
           ->setUrl($url)
@@ -305,7 +305,7 @@ class GoToWebinar extends ServiceAbstract implements CitrixApiAware
    */
   public function resendPanelistInvitation($webinarKey, $panelistKey)
   {
-      $url = 'https://api.citrixonline.com/G2W/rest/organizers/' . $this->getClient()->getOrganizerKey() . '/webinars/' . $webinarKey . '/panelists/' . $panelistKey . '/resendInvitation';
+      $url = 'https://api.getgo.com/G2W/rest/organizers/' . $this->getClient()->getOrganizerKey() . '/webinars/' . $webinarKey . '/panelists/' . $panelistKey . '/resendInvitation';
       $this->setHttpMethod('POST')
           ->setUrl($url)
           ->sendRequest($this->getClient()->getAccessToken());
@@ -317,7 +317,7 @@ class GoToWebinar extends ServiceAbstract implements CitrixApiAware
    */
   public function deletePanelist($webinarKey, $panelistKey)
   {
-      $url = 'https://api.citrixonline.com/G2W/rest/organizers/' . $this->getClient()->getOrganizerKey() . '/webinars/' . $webinarKey . '/panelists/' . $panelistKey;
+      $url = 'https://api.getgo.com/G2W/rest/organizers/' . $this->getClient()->getOrganizerKey() . '/webinars/' . $webinarKey . '/panelists/' . $panelistKey;
       $this->setHttpMethod('DELETE')
         ->setUrl($url)
         ->sendRequest($this->getClient()->getAccessToken());
@@ -384,7 +384,7 @@ class GoToWebinar extends ServiceAbstract implements CitrixApiAware
    */
   public function getPerformances($webinarKey)
   {
-      $url = 'https://api.citrixonline.com/G2W/rest/organizers/' . $this->getClient()->getOrganizerKey() . '/webinars/' . $webinarKey . '/performance';
+      $url = 'https://api.getgo.com/G2W/rest/organizers/' . $this->getClient()->getOrganizerKey() . '/webinars/' . $webinarKey . '/performance';
       $this->setHttpMethod('GET')
         ->setUrl($url)
         ->sendRequest($this->getClient()->getAccessToken())
@@ -425,7 +425,7 @@ class GoToWebinar extends ServiceAbstract implements CitrixApiAware
    */
     public function getSessionPerformance($webinarKey, $sessionKey)
     {
-        $url = 'https://api.citrixonline.com/G2W/rest/organizers/' . $this->getClient()->getOrganizerKey() . '/webinars/' . $webinarKey . '/sessions/' . $sessionKey . '/performance';
+        $url = 'https://api.getgo.com/G2W/rest/organizers/' . $this->getClient()->getOrganizerKey() . '/webinars/' . $webinarKey . '/sessions/' . $sessionKey . '/performance';
         $this->setHttpMethod('GET')
          ->setUrl($url)
          ->sendRequest($this->getClient()->getAccessToken())
@@ -443,7 +443,7 @@ class GoToWebinar extends ServiceAbstract implements CitrixApiAware
    */
     public function getSessionAttendees($webinarKey, $sessionKey)
     {
-        $url = 'https://api.citrixonline.com/G2W/rest/organizers/' . $this->getClient()->getOrganizerKey() . '/webinars/' . $webinarKey . '/sessions/' . $sessionKey . '/attendees';
+        $url = 'https://api.getgo.com/G2W/rest/organizers/' . $this->getClient()->getOrganizerKey() . '/webinars/' . $webinarKey . '/sessions/' . $sessionKey . '/attendees';
         $this->setHttpMethod('GET')
          ->setUrl($url)
          ->sendRequest($this->getClient()->getAccessToken())
@@ -477,7 +477,7 @@ class GoToWebinar extends ServiceAbstract implements CitrixApiAware
    */
     public function getSurveys($webinarKey, $sessionKey)
     {
-        $url = 'https://api.citrixonline.com/G2W/rest/organizers/' . $this->getClient()->getOrganizerKey() . '/webinars/' . $webinarKey . '/sessions/' . $sessionKey . '/surveys';
+        $url = 'https://api.getgo.com/G2W/rest/organizers/' . $this->getClient()->getOrganizerKey() . '/webinars/' . $webinarKey . '/sessions/' . $sessionKey . '/surveys';
         $this->setHttpMethod('GET')
          ->setUrl($url)
          ->sendRequest($this->getClient()->getAccessToken())
@@ -494,7 +494,7 @@ class GoToWebinar extends ServiceAbstract implements CitrixApiAware
    */
     public function getQuestions($webinarKey, $sessionKey)
     {
-        $url = 'https://api.citrixonline.com/G2W/rest/organizers/' . $this->getClient()->getOrganizerKey() . '/webinars/' . $webinarKey . '/sessions/' . $sessionKey . '/questions';
+        $url = 'https://api.getgo.com/G2W/rest/organizers/' . $this->getClient()->getOrganizerKey() . '/webinars/' . $webinarKey . '/sessions/' . $sessionKey . '/questions';
         $this->setHttpMethod('GET')
          ->setUrl($url)
          ->sendRequest($this->getClient()->getAccessToken())
@@ -511,7 +511,7 @@ class GoToWebinar extends ServiceAbstract implements CitrixApiAware
    */
     public function getPerformance($webinarKey, $sessionKey)
     {
-        $url = 'https://api.citrixonline.com/G2W/rest/organizers/' . $this->getClient()->getOrganizerKey() . '/webinars/' . $webinarKey . '/sessions/' . $sessionKey . '/performance';
+        $url = 'https://api.getgo.com/G2W/rest/organizers/' . $this->getClient()->getOrganizerKey() . '/webinars/' . $webinarKey . '/sessions/' . $sessionKey . '/performance';
         $this->setHttpMethod('GET')
          ->setUrl($url)
          ->sendRequest($this->getClient()->getAccessToken())
@@ -544,7 +544,7 @@ class GoToWebinar extends ServiceAbstract implements CitrixApiAware
    */
   public function createCoorganizer($webinarKey, $params)
   {
-      $url = 'https://api.citrixonline.com/G2W/rest/organizers/' . $this->getClient()->getOrganizerKey() . '/webinars/' . $webinarKey . '/coorganizers';
+      $url = 'https://api.getgo.com/G2W/rest/organizers/' . $this->getClient()->getOrganizerKey() . '/webinars/' . $webinarKey . '/coorganizers';
       $this->setHttpMethod('POST')
           ->setUrl($url)
           ->setParams($params)
@@ -557,7 +557,7 @@ class GoToWebinar extends ServiceAbstract implements CitrixApiAware
    */
   public function resendCoorganizerInvitation($webinarKey, $coorganizerKey)
   {
-      $url = 'https://api.citrixonline.com/G2W/rest/organizers/' . $this->getClient()->getOrganizerKey() . '/webinars/' . $webinarKey . '/coorganizers/' . $coorganizerKey . '/resendInvitation';
+      $url = 'https://api.getgo.com/G2W/rest/organizers/' . $this->getClient()->getOrganizerKey() . '/webinars/' . $webinarKey . '/coorganizers/' . $coorganizerKey . '/resendInvitation';
       $this->setHttpMethod('POST')
           ->setUrl($url)
           ->sendRequest($this->getClient()->getAccessToken());
@@ -569,7 +569,7 @@ class GoToWebinar extends ServiceAbstract implements CitrixApiAware
    */
   public function deleteCoorganizer($webinarKey, $coorganizerKey)
   {
-      $url = 'https://api.citrixonline.com/G2W/rest/organizers/' . $this->getClient()->getOrganizerKey() . '/webinars/' . $webinarKey . '/coorganizers/' . $coorganizerKey;
+      $url = 'https://api.getgo.com/G2W/rest/organizers/' . $this->getClient()->getOrganizerKey() . '/webinars/' . $webinarKey . '/coorganizers/' . $coorganizerKey;
       $this->setHttpMethod('DELETE')
         ->setUrl($url)
         ->sendRequest($this->getClient()->getAccessToken());
