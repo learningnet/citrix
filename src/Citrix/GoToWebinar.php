@@ -649,4 +649,17 @@ class GoToWebinar extends ServiceAbstract implements CitrixApiAware
           $this->setResponse($collection);
       }
   }
+
+    /**
+     * Allows search for a completed recordingasset.
+     */
+    public function searchRecordingAssets($params)
+    {
+        $url = '/recordingassets/search';
+        $this->setHttpMethod('POST')
+            ->setUrl($this->baseUrl . $url)
+            ->setParams($params)
+            ->sendRequest($this->getClient()->getAccessToken());
+        return $this->getResponse();
+    }
 }
